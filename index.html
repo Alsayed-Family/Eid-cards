@@ -111,7 +111,7 @@ h1 {
 
 .preview-text {
     position: absolute;
-    bottom: 190px;
+    bottom: 190px; /* ← رفعناه أكثر */
     left: 50%;
     transform: translateX(-50%);
     font-size: 20px;
@@ -119,17 +119,14 @@ h1 {
     font-family: 'Tajawal', sans-serif;
 }
 
-/* 👇 ضبط خاص للجوال */
+/* للجوال */
 @media (max-width: 768px) {
-  .preview-image {
-      width: 80%; /* صورة أوضح على الشاشات الصغيرة */
-  }
-
   .preview-text {
       font-size: 16px;
-      bottom: 110px; /* ارفعه شوي للجوال */
+      bottom: 140px; /* ← رفعناه أكثر بالجوال */
   }
 }
+
 
 
 
