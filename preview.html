@@ -36,13 +36,14 @@
 
 
     .text {
-      position: absolute;
-      bottom: 25px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 20px;
-      color: #68864a;
-    }
+  position: absolute;
+  bottom: 50px; /* بدلاً من 25px */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  color: #68864a;
+}
+
 
     .download-button {
       margin-top: 20px;
@@ -55,11 +56,13 @@
       cursor: pointer;
     }
 
-    @media (max-width: 768px) {
-      .text {
-        font-size: 10px;
-        bottom: 20px;
-      }
+   @media (max-width: 768px) {
+  .text {
+    font-size: 10px;
+    bottom: 40px; /* بدل 20px */
+  }
+}
+
     }
   </style>
 </head>
