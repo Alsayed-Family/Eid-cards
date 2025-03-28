@@ -119,12 +119,12 @@ h1 {
 .preview-image {
   width: 250px;
   height: auto;
-  border-radius: 10px;
-  position: relative;
-  right: -15px; /* تحريك الصورة لليمين */
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: block;
 }
-
-
 
 .preview-text {
     position: absolute;
@@ -149,6 +149,16 @@ h1 {
   }
 }
 
+#cardArea {
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  width: fit-content;
+  height: fit-content;
+  display: inline-block;
+  background-color: white; /* أو نفس لون خلفية الصورة */
+}
 
 
 
@@ -184,21 +194,25 @@ h1 {
     }
 
     function generateCard() {
-      if (!selectedCard) {
-        alert("يرجى اختيار بطاقة أولاً!");
-        return;
-      }
+  if (!selectedCard) {
+    alert("يرجى اختيار بطاقة أولاً!");
+    return;
+  }
 
-      let username = document.getElementById("username").value.trim();
-      if (username === "") {
-        alert("يرجى إدخال اسمك!");
-        return;
-      }
+  let username = document.getElementById("username").value.trim();
+  if (username === "") {
+    alert("يرجى إدخال اسمك!");
+    return;
+  }
 
-      document.getElementById("preview").style.display = "block";
-      document.getElementById("previewImage").src = selectedCard;
-      document.getElementById("previewText").textContent = username;
-    }
+  // نحفظ البيانات في localStorage
+  localStorage.setItem("selectedCard", selectedCard);
+  localStorage.setItem("userName", username);
+
+  // نفتح صفحة المعاينة تلقائيًا
+  window.open("preview.html", "_blank");
+}
+
 
     function downloadCard() {
       const cardElement = document.getElementById("cardArea");
