@@ -36,19 +36,26 @@ h1 {
 }
 
 .card-container {
-    flex-wrap: wrap;
+    display: flex;
     justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
 }
 
-
 .card {
-    width: 100%;
-    max-width: 250px;
-    height: auto;
+    width: 250px;
+    height: 350px;
     border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* للجوال */
+@media (max-width: 768px) {
+  .card {
+    width: 45%;
+    height: auto;
+  }
 }
 
 .card:hover {
@@ -117,21 +124,23 @@ h1 {
 
 .preview-text {
     position: absolute;
-    bottom: 120px; /* كان 190، نزلناه */
-    left: 47%;
+    bottom: 100px;      /* نزّلناه */
+    left: 52%;          /* يميّل شوي يمين */
     transform: translateX(-50%);
     font-size: 20px;
     color: #68864a;
     font-family: 'Changa', sans-serif;
 }
 
-/* للجوال */
+/* في الجوال */
 @media (max-width: 768px) {
   .preview-text {
-      font-size: 16px;
-      bottom: 100px; /* نزلناه تحت أكثر */
+    font-size: 16px;
+    bottom: 80px;      /* أنزله أكثر */
+    left: 54%;         /* يزحف أكثر يمين */
   }
 }
+
 
 
   </style>
