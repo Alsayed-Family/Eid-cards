@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بطاقتك</title>
+  <link href="https://fonts.googleapis.com/css2?family=Changa&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Changa', sans-serif;
+    }
+
+    .card-preview {
+      position: relative;
+      display: inline-block;
+    }
+
+    .card-preview img {
+  display: block;
+  width: 100vw; /* عرض الصورة يغطي كامل الشاشة */
+  height: 100vh; /* ارتفاع الصورة يغطي الشاشة */
+  object-fit: cover; /* يضمن عدم وجود فراغات، حتى لو فيه فرق أبعاد */
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+
+    .text {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 20px;
+      color: #68864a;
+    }
+
+    @media (max-width: 768px) {
+      .text {
+        font-size: 13px;
+        bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card-preview">
+    <img id="finalImage" src="" alt="بطاقتك">
+    <div class="text" id="finalText"></div>
+  </div>
+
+  <script>
+    // نجيب البيانات المحفوظة
+    const card = localStorage.getItem("selectedCard");
+    const name = localStorage.getItem("userName");
+
+    // نعرض البطاقة والاسم
+    document.getElementById("finalImage").src = card;
+    document.getElementById("finalText").textContent = name;
+  </script>
+</body>
+</html>
