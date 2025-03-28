@@ -117,14 +117,18 @@ h1 {
 }
 
 .preview-image {
-    width: 250px;
-    height: auto;
-    border-radius: 10px;
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  position: relative;
+  right: -15px; /* تحريك الصورة لليمين */
 }
+
+
 
 .preview-text {
     position: absolute;
-    bottom: 40px;      /* نزّلناه */
+    bottom: 70px;      /* نزّلناه */
     left: 52%;          /* يميّل شوي يمين */
     transform: translateX(-50%);
     font-size: 20px;
@@ -136,32 +140,15 @@ h1 {
 @media (max-width: 768px) {
   .preview-text {
     font-size: 13px;
-    bottom: 38px;      /* أنزله أكثر */
-    left: 50%;         /* يزحف أكثر يمين */
+    bottom: 70px;      /* أنزله أكثر */
+    left: 54%;         /* يزحف أكثر يمين */
+  }
+}@media (max-width: 768px) {
+  .preview-image {
+    right: -10px; /* تحريك أقل للجوال */
   }
 }
-/* الصورة النهائية داخل المعاينة */
-#cardArea {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    padding: 0;
-    margin: 0;
-    border-radius: 0;
-    box-shadow: none;
-    width: fit-content;
-    height: fit-content;
-}
 
-.preview-image {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    border: none;
-    margin: 0;
-    padding: 0;
-}
 
 
 
