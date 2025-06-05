@@ -29,15 +29,23 @@
       display: block;
     }
 
-    .text {
-      position: absolute;
-      bottom: 105px; /* نزّل الاسم حسب التصميم */
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 20px;
-      color: #ffffff;
-      white-space: nowrap;
-    }
+   .text {
+  position: absolute;
+  bottom: 105px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;   /* كبرنا الخط هنا */
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .text {
+    font-size: 20px;
+    bottom: 85px;
+  }
+}
+
 
     .download-button {
       margin-top: 20px;
