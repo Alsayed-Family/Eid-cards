@@ -9,70 +9,56 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background-color: #e4dccf;
+      padding: 30px 0;
+      background-color: #fff;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      height: 100vh;
       font-family: 'Changa', sans-serif;
     }
 
     .card-preview {
-  position: relative;
-  display: inline-block;
-  width: 250px;
-  height: auto;
-}
+      position: relative;
+      display: inline-block;
+      width: auto;
+    }
 
-
-.card-preview img {
-  width: 250px;
-  height: auto;
-  display: block;
-  border: none;
-}
-
-
-
+    .card-preview img {
+      width: 300px;
+      height: auto;
+      display: block;
+    }
 
     .text {
-  position: absolute;
-  bottom: 55px; /* بدلاً من 25px */
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 20px;
-  color: #68864a;
-}
+      position: absolute;
+      bottom: 105px; /* نزّل الاسم حسب التصميم */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 20px;
+      color: #ffffff;
+      white-space: nowrap;
+    }
 
+    .download-button {
+      margin-top: 20px;
+      background-color: #bca67f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-  .download-button {
-  margin-top: 20px;
-  background-color: #d0b777;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 13px;
-  border-radius: 5px;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ظل ناعم */
-  transition: all 0.3s ease;
-}
+    @media (max-width: 768px) {
+      .text {
+        font-size: 13px;
+        bottom: 85px;
+      }
 
-.download-button:hover {
-  background-color: #c6ab6f;
-  transform: scale(1.05); /* تكبر شوي عند التحويم */
-}
-
-
-   @media (max-width: 768px) {
-  .text {
-    font-size: 10px;
-    bottom: 45px; /* بدل 20px */
-  }
-}
-
+      .card-preview img {
+        width: 250px;
+      }
     }
   </style>
 </head>
@@ -95,7 +81,10 @@
     function downloadWithText() {
       const cardElement = document.getElementById("cardArea");
 
-      html2canvas(cardElement, { useCORS: true }).then(canvas => {
+      html2canvas(cardElement, {
+        useCORS: true,
+        scale: 2 // لتحسين دقة الصورة عند الحفظ
+      }).then(canvas => {
         const image = canvas.toDataURL("image/png");
         const link = document.createElement("a");
         link.href = image;
