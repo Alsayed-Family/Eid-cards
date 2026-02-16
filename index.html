@@ -10,7 +10,7 @@
   <style>
     body {
       font-family: 'Cairo', sans-serif;
-      background-color: #f3efe7;
+      background-color: #ece6df;/*لون الخلفيه الكبيره*/
       color: #5a6840;
       margin: 0;
       padding: 0;
@@ -23,7 +23,7 @@
     .container {
       text-align: center;
       padding: 20px;
-      background-color: #e4d6c3;
+      background-color: #cbc4bb;/*لون الخلفيه الصغيره*/
       border-radius: 10px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
@@ -52,23 +52,23 @@
       width: 80%;
       padding: 12px;
       font-size: 16px;
-      border: 2px solid #c2aa80;
+      border: 2px solid #aeabb0;/*لون اطراف مربع الاسم */
       border-radius: 5px;
       margin-bottom: 20px;
       background-color: #f8f6f2;
-      color: #8a7d6e;
+      color: #514a57;
       text-align: right;
     }
 
     .input-field::placeholder {
-      color: #999;
+      color: #514a57;
       text-align: right;
     }
 
     .generate-button,
     .download-button {
-      background-color: #bca67f;
-      color: white;
+      background-color: #aeabb0;/*لون الزر */
+      color: #514a57;/*لون كلام الزر */
       font-size: 18px;
       padding: 10px 20px;
       border: none;
@@ -78,7 +78,7 @@
 
     .generate-button:hover,
     .download-button:hover {
-      background-color: #a9946e;
+      background-color: #88808e;/*لون هوفر الزر */
     }
 
     .preview-container {
@@ -103,7 +103,7 @@
       left: 50%;
       transform: translateX(-50%);
       font-size: 20px;
-      color: #8a7d6e;
+      color: #0d0700;
     }
 
     @media (max-width: 768px) {
@@ -128,7 +128,7 @@
   
 
     <div class="card-container">
-      <img src="2025adha.jpg" class="card" onclick="selectCard('2025adha.jpg')">
+      <img src="ramadan2026.png" class="card" onclick="selectCard('ramadan2026.png')">
     </div>
 
     <input type="text" id="username" placeholder="اكتب اسمك هنا" class="input-field">
@@ -158,7 +158,7 @@
   }
 
   // نحدد اسم البطاقة يدويًا هنا
-  const fixedCard = "2025adha.jpg";
+  const fixedCard = "ramadan2026.png";
 
   localStorage.setItem("selectedCard", fixedCard);
   localStorage.setItem("userName", username);
