@@ -23,11 +23,13 @@
       width: auto;
     }
 
-    .card-preview img {
-      width: 300px;
-      height: auto;
-      display: block;
-    }
+ .card-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 
   .text {
     font-family: 'Amiri', serif; /* خط جديد */
@@ -80,21 +82,24 @@
     document.getElementById("finalImage").src = card;
     document.getElementById("finalText").textContent = name;
 
-    function downloadWithText() {
-      const cardElement = document.getElementById("cardArea");
+  function downloadWithText() {
+  const cardElement = document.getElementById("cardArea");
 
-      html2canvas(cardElement, {
-        useCORS: true,
-        scale: 2 // لتحسين دقة الصورة عند الحفظ
-      }).then(canvas => {
-        const image = canvas.toDataURL("image/png");
-        const link = document.createElement("a");
-        link.href = image;
-        link.download = "بطاقتك.png";
-        link.click();
-      });
-    }
+  html2canvas(cardElement, {
+    useCORS: true,
+    scale: 4
+  }).then(canvas => {
+
+    const link = document.createElement("a");
+    link.download = "بطاقة_رمضان.png";
+    link.href = canvas.toDataURL("image/png", 1.0);
+    link.click();
+
+  });
+}
+
   </script>
 </body>
 </html>
+
 
