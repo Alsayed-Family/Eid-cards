@@ -7,128 +7,129 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet"> 
-  <style>
-    body {
-      font-family: 'Cairo', sans-serif;
-      background-color: #ece6df;/*لون الخلفيه الكبيره*/
-      color: #5a6840;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+ <style>
+  body {
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(#8a6f6f, #d6c2b8);/*لون الخلفيه الكبيره*/
+    color: #f5f1ee;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
 
-    .container {
-      text-align: center;
-      padding: 20px;
-      background-color: #cbc4bb;/*لون الخلفيه الصغيره*/
-      border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
+  .container {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.2);/*لون الخلفيه الصغيره*/
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
 
-    h1 {
-      font-size: 30px;
-      color: #8a7d6e;
-      margin-bottom: 25px;
-    }
+  h1 {
+    font-size: 30px;
+    color: #fffaf7;
+    margin-bottom: 25px;
+  }
 
-    .card-container {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
+  .card-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
 
-    .card {
-      width: 250px;
-      height: auto;
-      border-radius: 10px;
-      object-fit: cover;
-      cursor: pointer;
-    }
+  .card {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    cursor: pointer;
+  }
 
-    .input-field {
-      width: 80%;
-      padding: 12px;
-      font-size: 16px;
-      border: 2px solid #aeabb0;/*لون اطراف مربع الاسم */
-      border-radius: 5px;
-      margin-bottom: 20px;
-      background-color: #f8f6f2;
-      color: #514a57;
-      text-align: right;
-    }
+  .input-field {
+    width: 80%;
+    padding: 12px;
+    font-size: 16px;
+    border:1px solid rgba(255,255,255,0.5);/*لون اطراف مربع الاسم */
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: rgba(255,255,255,0.2);
+    color: #483030;
+    text-align: right;
+  }
 
-    .input-field::placeholder {
-      color: #514a57;
-      text-align: right;
-    }
+  .input-field::placeholder {
+    color: rgba(255,255,255,0.8);
+    text-align: right;
+  }
 
-    .generate-button,
-    .download-button {
-      background-color: #aeabb0;/*لون الزر */
-      color: #514a57;/*لون كلام الزر */
-      font-size: 18px;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+  .generate-button,
+  .download-button {
+    background: linear-gradient(135deg, #d6bfa9, #a78b7a);/*لون الزر */
+    color: #fff;/*لون كلام الزر */
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 
-    .generate-button:hover,
-    .download-button:hover {
-      background-color: #88808e;/*لون هوفر الزر */
-    }
+  .generate-button:hover,
+  .download-button:hover {
+    background: linear-gradient(135deg,  #e2cfc0, #bfa293);/*لون هوفر الزر */
+  }
 
-    .preview-container {
-      margin-top: 20px;
-      text-align: center;
-    }
+  .preview-container {
+    margin-top: 20px;
+    text-align: center;
+  }
 
-    .card-preview {
-      position: relative;
-    }
+  .card-preview {
+    position: relative;
+  }
 
-    .preview-image {
-      width: 250px;
-      height: auto;
-      border: none;
-      display: block;
-    }
+  .preview-image {
+    width: 250px;
+    height: auto;
+    border: none;
+    display: block;
+  }
 
+  .preview-text {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: #ffffffaf; /* أبيض */
+    text-shadow: 0 0 8px rgba(0,0,0,0.35);
+  }
+
+  @media (max-width: 768px) {
     .preview-text {
-      position: absolute;
-      bottom: 60px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 20px;
-      color: #0d0700;
+      font-size: 13px;
+      bottom: 50px;
     }
+  }
 
-    @media (max-width: 768px) {
-      .preview-text {
-        font-size: 13px;
-        bottom: 50px;
-      }
-    }
-
-    #cardArea {
-      padding: 0;
-      margin: 0;
-      border-radius: 0;
-      width: fit-content;
-      height: fit-content;
-      display: inline-block;
-    }
-  </style>
+  #cardArea {
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    width: fit-content;
+    height: fit-content;
+    display: inline-block;
+  }
+</style>
 </head>
 <body>
   <div class="container">
   
 
     <div class="card-container">
-      <img src="ramadan2026.png" class="card" onclick="selectCard('ramadan2026.png')">
+      <img src="eid2026.png" class="card" onclick="selectCard('eid2026.png')">
     </div>
 
     <input type="text" id="username" placeholder="اكتب اسمك هنا" class="input-field">
@@ -158,7 +159,7 @@
   }
 
   // نحدد اسم البطاقة يدويًا هنا
-  const fixedCard = "ramadan2026.png";
+  const fixedCard = "eid2026.png";
 
   localStorage.setItem("selectedCard", fixedCard);
   localStorage.setItem("userName", username);
